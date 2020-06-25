@@ -1,5 +1,5 @@
 import React from 'react'
-import { navigate } from 'gatsby-link'
+import {navigate} from 'gatsby-link'
 import Layout from '../../components/Layout'
 
 function encode(data) {
@@ -18,15 +18,15 @@ export default class Contact extends React.Component {
     this.state = {}
   }
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value })
+  handleChange = e => {
+    this.setState({[e.target.name]: e.target.value})
   }
 
-  handleAttachment = (e) => {
-    this.setState({ [e.target.name]: e.target.files[0] })
+  handleAttachment = e => {
+    this.setState({[e.target.name]: e.target.files[0]})
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault()
     const form = e.target
     fetch('/', {
@@ -37,7 +37,7 @@ export default class Contact extends React.Component {
       }),
     })
       .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
+      .catch(error => alert(error))
   }
 
   render() {
