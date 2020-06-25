@@ -40,7 +40,7 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "push-format": "yarn format && git commit --allow-empty -a -m \"ci(format): prettier\"",
+    "push-format": "yarn format && (git commit --allow-empty -a -m \"ci(format): prettier\"|| true)",
     "push-version": "standard-version --prerelease alpha",
     "test": "echo \"Error: no test specified\" && exit 1",
     "push": "git stash && yarn push-format && yarn push-version && git push && git stash apply"
