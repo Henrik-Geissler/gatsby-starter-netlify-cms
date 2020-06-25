@@ -8,7 +8,7 @@ import { photos } from "./photos";
 
 export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
-  const BasicRows = () => <Gallery photos={photos} />;
+  const BasicRows = () => <Gallery photos={photos} direction={"column"}/>;
 
   return (
   <BasicRows />
