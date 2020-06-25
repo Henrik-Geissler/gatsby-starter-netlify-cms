@@ -43,9 +43,13 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "push-format": "yarn format & git commit -a -m \"ci(format): prettier\"",
+    "push-version": "standard-version --prerelease alpha & git commit -a -m \"ci(version): Changelog\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "push": "git stash & push-format & push-version & git push & git stash apply"
   },
   "devDependencies": {
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "standard-version": "^7.1.0"
   }
 }
