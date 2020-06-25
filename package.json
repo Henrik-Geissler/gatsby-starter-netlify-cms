@@ -32,9 +32,6 @@
     "react-photo-gallery": "^8.0.0",
     "uuid": "^7.0.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
