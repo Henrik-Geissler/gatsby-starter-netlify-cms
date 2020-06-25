@@ -46,7 +46,7 @@
     "push-format": "yarn format & git commit -a -m \"ci(format): prettier\"",
     "push-version": "standard-version --prerelease alpha & git commit -a -m \"ci(version): Changelog\"",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "push": "git stash & yarn push-format & yarn push-version & git push & git stash apply"
+    "push": "git stash && yarn push-format && yarn push-version && git push && git stash apply"
   },
   "devDependencies": {
     "prettier": "^2.0.5",
