@@ -6,13 +6,13 @@ import Card from 'react-bootstrap/Card'
 
 const UserAccordion = ({user}) => (
     <Accordion defaultActiveKey="0">
-        {user.map(user => (
+        {user.map((user,index) => (
             <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
+            <Accordion.Toggle as={Card.Header} eventKey={index}>
                 name:{user.name}
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-                <Card.Body>Hello! I'm the body</Card.Body>
+            <Accordion.Collapse eventKey={index}>
+                <Card.Body>Hello! I'm the body {user.author}</Card.Body>
             </Accordion.Collapse>
             </Card>
         ))}
