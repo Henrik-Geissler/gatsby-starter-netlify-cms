@@ -12,7 +12,7 @@ const UserAccordion = ({user}) => (
                 name:{user.name}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={index}>
-                <Card.Body>Hello! I'm the body {user.author}</Card.Body>
+                <Card.Body>Hello!{index} I'm the body {user.author}</Card.Body>
             </Accordion.Collapse>
             </Card>
         ))}
