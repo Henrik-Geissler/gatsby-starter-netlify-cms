@@ -4,13 +4,11 @@ import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Content, {HTMLContent} from '../components/Content'
 import UserAccordion from '../components/UserAccordion'
-import {user} from './user'
+import {user} from './ajax/user'
 
 export const WaitingPageTemplate = ({title, content, contentComponent}) => {
   const PageContent = contentComponent || Content
-  const MyAccordion = () => <UserAccordion user={user}/>
-
-  return <MyAccordion />
+  return <UserAccordion user={user}/>
 }
 
 WaitingPageTemplate.propTypes = {
