@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {graphql} from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, {HTMLContent} from '../components/Content'
+import Content, { HTMLContent } from '../components/Content'
 import UserAccordion from '../components/UserAccordion'
-import {user} from '../ajax/user'
+import { user } from '../ajax/user'
 
-export const WaitingPageTemplate = ({title, content, contentComponent}) => {
+export const WaitingPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content
-  return <UserAccordion user={user}/>
+  return <UserAccordion user={user} />
 }
 
 WaitingPageTemplate.propTypes = {
@@ -17,8 +17,8 @@ WaitingPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const WaitingPage = ({data}) => {
-  const {markdownRemark: post} = data
+const WaitingPage = ({ data }) => {
+  const { markdownRemark: post } = data
 
   return (
     <Layout>
@@ -35,12 +35,11 @@ WaitingPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-
 export default WaitingPage
 
 export const waitingPageQuery = graphql`
   query WaitingPage($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
         title

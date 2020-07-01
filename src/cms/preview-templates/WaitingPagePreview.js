@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {WaitingPageTemplate} from '../../templates/waiting-page'
+import { WaitingPageTemplate } from '../../templates/waiting-page'
 
-const WaitingPagePreview = ({entry, widgetFor}) => (
+const WaitingPagePreview = ({ entry, widgetFor }) => (
   <WaitingPageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
