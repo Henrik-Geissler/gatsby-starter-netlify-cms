@@ -3,14 +3,14 @@ import PropTypes from 'prop-types'
 import {graphql} from 'gatsby'
 import Layout from '../components/Layout'
 import Content, {HTMLContent} from '../components/Content'
-import Gallery from 'react-photo-gallery'
-import {photos} from './photos'
+import UserAccordion from '../components/UserAccordion'
+import {user} from './user'
 
 export const WaitingPageTemplate = ({title, content, contentComponent}) => {
   const PageContent = contentComponent || Content
-  const BasicRows = () => <Gallery photos={photos} direction={'column'} />
+  const MyAccordion = () => <UserAccordion user={user}/>
 
-  return <BasicRows />
+  return <MyAccordion />
 }
 
 WaitingPageTemplate.propTypes = {
