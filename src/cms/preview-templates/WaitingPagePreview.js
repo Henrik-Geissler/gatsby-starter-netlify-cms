@@ -1,19 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {MainPageTemplate} from '../../templates/main-page'
+import {WaitingPageTemplate} from '../../templates/waiting-page'
 
-const MainPagePreview = ({entry, widgetFor}) => (
-  <MainPageTemplate
+const WaitingPagePreview = ({entry, widgetFor}) => (
+  <WaitingPageTemplate
     title={entry.getIn(['data', 'title'])}
     content={widgetFor('body')}
   />
 )
 
-MainPagePreview.propTypes = {
+WaitingPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default MainPagePreview
+export default WaitingPagePreview

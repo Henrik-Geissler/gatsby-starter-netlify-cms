@@ -36,7 +36,7 @@ const Navbar = class extends React.Component {
       <nav
         className="navbar is-transparent"
         role="navigation"
-        aria-label="main-navigation"
+        aria-label="waiting-navigation"
       >
         <div className="container">
           <div className="navbar-brand">
@@ -59,7 +59,7 @@ const Navbar = class extends React.Component {
             className={`navbar-menu ${this.state.navBarActiveClass}`}
           >
             <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/warteliste">
+              <Link className="navbar-item" to="/waiting">
                 Warteliste
               </Link>
             </div>

@@ -1,5 +1,5 @@
 ---
-templateKey: 'main-page'
+templateKey: 'waiting-page'
 path: /
 image: /img/home-jumbotron.jpg
 title: Warteliste

@@ -6,25 +6,25 @@ import Content, {HTMLContent} from '../components/Content'
 import Gallery from 'react-photo-gallery'
 import {photos} from './photos'
 
-export const MainPageTemplate = ({title, content, contentComponent}) => {
+export const WaitingPageTemplate = ({title, content, contentComponent}) => {
   const PageContent = contentComponent || Content
   const BasicRows = () => <Gallery photos={photos} direction={'column'} />
 
   return <BasicRows />
 }
 
-MainPageTemplate.propTypes = {
+WaitingPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
-const MainPage = ({data}) => {
+const WaitingPage = ({data}) => {
   const {markdownRemark: post} = data
 
   return (
     <Layout>
-      <MainPageTemplate
+      <WaitingPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
@@ -33,14 +33,15 @@ const MainPage = ({data}) => {
   )
 }
 
-MainPage.propTypes = {
+WaitingPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default MainPage
 
-export const mainPageQuery = graphql`
-  query MainPage($id: String!) {
+export default WaitingPage
+
+export const waitingPageQuery = graphql`
+  query WaitingPage($id: String!) {
     markdownRemark(id: {eq: $id}) {
       html
       frontmatter {
