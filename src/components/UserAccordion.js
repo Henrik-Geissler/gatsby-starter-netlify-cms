@@ -8,12 +8,15 @@ const UserAccordion = ({ user }) => (
     {user.map((user, index) => (
       <Card>
         <Accordion.Toggle as={Card.Header} eventKey={index}>
-          name:{user.name}
+          {user.name} {user.state}
         </Accordion.Toggle>
         <Accordion.Collapse eventKey={index}>
           <Card.Body>
-            Hello!{index} I'm the body {user.author}
+              {user.tel} {user.mail} {user.date}
           </Card.Body>
+          {user.map((interaction =user.interactions) => (
+            <Card>{interaction.supporter} {interaction.outcome} {interaction.text}</Card>
+          ))}
         </Accordion.Collapse>
       </Card>
     ))}
@@ -24,7 +27,18 @@ UserAccordion.propTypes = {
   user: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
-      author: PropTypes.string,
+      tel: PropTypes.string,
+      mail: PropTypes.string,
+      date: PropTypes.string,
+      state: PropTypes.string,
+      interactions: PropTypes.arrayOf(
+          PropTypes.shape({
+            supporter: PropTypes.string,
+            timestamp: PropTypes.string,
+            outcome: PropTypes.string,
+            text: PropTypes.string,
+          })
+      )
     })
   ),
 }
