@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import UserAccordion from '../components/UserAccordion'
+import Overview from '../components/Overview'
+import 'bootstrap/dist/css/bootstrap.min.css';
 class WaitingPageTemplate extends React.Component {
   constructor(props) {
     super(props);
@@ -39,8 +41,10 @@ class WaitingPageTemplate extends React.Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return (
-        <UserAccordion user={user} />
+      return (<div>
+        <Overview />
+          <UserAccordion user={user} />
+        </div>
       );
     }
   }
