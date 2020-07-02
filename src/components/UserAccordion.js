@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
+import UserInteraction from './UserInteraction'
 
 const UserAccordion = ({ user }) => (
   <Accordion defaultActiveKey="0">
@@ -13,10 +14,8 @@ const UserAccordion = ({ user }) => (
         <Accordion.Collapse eventKey={index}>
           <Card.Body>
               {user.tel} {user.mail} {user.date}
+          <UserInteraction interactions={user.interactions}/>
           </Card.Body>
-          {user.map((interaction =user.interactions) => (
-            <Card>{interaction.supporter} {interaction.outcome} {interaction.text}</Card>
-          ))}
         </Accordion.Collapse>
       </Card>
     ))}
