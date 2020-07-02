@@ -4,48 +4,49 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import UserAccordion from '../components/UserAccordion'
 import Overview from '../components/Overview'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 class WaitingPageTemplate extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       error: null,
       isLoaded: false,
-      user: []
-    };
+      user: [],
+    }
   }
 
   componentDidMount() {
-    fetch("/ajaxExample/ExampleResultUser.json")
-      .then(res => res.json())
+    fetch('/ajaxExample/ExampleResultUser.json')
+      .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            user: result.user
-          });
+            user: result.user,
+          })
         },
         (error) => {
           this.setState({
             isLoaded: true,
-            error
-          });
+            error,
+          })
         }
       )
   }
 
   render() {
-    const { error, isLoaded, user } = this.state;
+    const { error, isLoaded, user } = this.state
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
-      return <div>Loading...</div>;
+      return <div>Loading...</div>
     } else {
-      return (<div>
-        <Overview />
+      return (
+        <div>
+          <Overview />
           <UserAccordion user={user} />
         </div>
-      );
+      )
     }
   }
 }
@@ -55,7 +56,7 @@ const WaitingPage = ({ data }) => {
 
   return (
     <Layout>
-      <WaitingPageTemplate/>
+      <WaitingPageTemplate />
     </Layout>
   )
 }
