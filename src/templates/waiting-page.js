@@ -1,71 +1,42 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import UserAccordion from '../components/UserAccordion'
-import Overview from '../components/Overview'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import UserAccordion from "../components/UserAccordion";
+import Overview from "../components/Overview";
+import Resource from "../components/Resource";
+import "bootstrap/dist/css/bootstrap.min.css";
 class WaitingPageTemplate extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      error: null,
-      isLoaded: false,
-      user: [],
-    }
-  }
-
-  componentDidMount() {
-    fetch('/ajaxExample/ExampleResultUser.json')
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.items,
-          })
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error,
-          })
-        }
-      )
-  }
-
   render() {
-    const { error, isLoaded, items } = this.state
-    if (error) {
-      return <div>Error: {error.message}</div>
-    } else if (!isLoaded) {
-      return <div>Loading...</div>
-    } else {
-      return (
-        <div>
-          <Overview />
-          <UserAccordion items={items}/>
-        </div>
-      )
-    }
+    return (
+      <>
+        <Resource
+          path="/ajaxExample/ExampleResultUser.json"
+          render={(data) => {
+            return <UserAccordion items={data} />;
+          }}
+        />
+        <Overview />
+      </>
+    );
   }
 }
 
 const WaitingPage = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
       <WaitingPageTemplate />
     </Layout>
-  )
-}
+  );
+};
 
 WaitingPage.propTypes = {
   data: PropTypes.object.isRequired,
-}
+};
 
-export default WaitingPage
+export default WaitingPage;
 
 export const waitingPageQuery = graphql`
   query WaitingPage($id: String!) {
@@ -76,4 +47,4 @@ export const waitingPageQuery = graphql`
       }
     }
   }
-`
+`;
