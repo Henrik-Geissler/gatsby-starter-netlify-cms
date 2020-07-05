@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ResourceContext from "./ResourceContext";
 class Resource extends Component {
   state = {
     loading: true,
@@ -32,7 +33,11 @@ class Resource extends Component {
     } else if (loading) {
       return <>Loading...</>;
     } else {
-      return this.props.render(payload);
+      return (
+        <ResourceContext.Provider value={payload}>
+          {this.props.render(payload)}
+        </ResourceContext.Provider>
+      );
     }
   }
 }

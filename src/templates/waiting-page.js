@@ -1,19 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+
 import Layout from "../components/Layout";
+
 import UserAccordion from "../components/UserAccordion";
 import Overview from "../components/Overview";
 import Resource from "../components/Resource";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 class WaitingPageTemplate extends React.Component {
   render() {
     return (
       <>
         <Resource
-          path="/ajaxExample/ExampleResultUser.json"
+          path="/api/example.json"
           render={(data) => {
-            return <UserAccordion items={data} />;
+            return <UserAccordion />;
           }}
         />
         <Overview />
@@ -24,7 +27,6 @@ class WaitingPageTemplate extends React.Component {
 
 const WaitingPage = ({ data }) => {
   const { markdownRemark: post } = data;
-
   return (
     <Layout>
       <WaitingPageTemplate />
