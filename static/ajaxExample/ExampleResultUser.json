@@ -1,13 +1,18 @@
 
-{
+{"items":{
+  "supporter":"Mitarbeiter1",
     "user" : 
     [
       {
+        "information": {
         "name": "Herr Klaus Kleber",
         "tel": "0123456789",
         "mail": "klaus@kleber.mail",
-        "date": "13.05.1994",
         "state": "wartet",
+        "supporter": "Mitarbeiter1",
+        "course": "AMT-23/24",
+        "course_date": "13.05.1994"
+        },
         "interactions": [
           {
             "supporter": "MAUSMitarbeiter1",
@@ -16,13 +21,13 @@
             "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
           },
           {
-            "supporter": "MAUSMitarbeiter1",
+            "supporter": "MAUSMitarbeiter2",
             "timestamp": "10.10.10/10:10:10",
-            "outcome": "Storno",
-            "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
+            "outcome": "Terminbestätigung",
+            "text": "BlaBlaBla"
           },
           {
-            "supporter": "MAUSMitarbeiter1",
+            "supporter": "MAUSMitarbeiter3",
             "timestamp": "10.10.10/10:10:10",
             "outcome": "Storno",
             "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
@@ -30,11 +35,15 @@
         ]
       },
       {
+        "information": {
         "name": "Herr Klaus Kleber",
         "tel": "0123456789",
         "mail": "klaus@kleber.mail",
-        "date": "13.05.1994",
         "state": "wartet",
+        "supporter": "Mitarbeiter1",
+        "course": "AMT-23/24",
+        "course_date": "13.05.1994"
+        },
         "interactions": [
           {
             "supporter": "MAUSMitarbeiter1",
@@ -43,18 +52,83 @@
             "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
           },
           {
+            "supporter": "MAUSMitarbeiter2",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Terminbestätigung",
+            "text": "BlaBlaBla"
+          },
+          {
+            "supporter": "MAUSMitarbeiter3",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Storno",
+            "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
+          }
+        ]
+      },
+      {
+        "information": {
+        "name": "Herr Klaus Kleber",
+        "tel": "0123456789",
+        "mail": "klaus@kleber.mail",
+        "state": "wartet",
+        "supporter": "",
+        "course": "AMT-23/24",
+        "course_date": "13.05.1994"
+        },
+        "interactions": [
+          {
             "supporter": "MAUSMitarbeiter1",
             "timestamp": "10.10.10/10:10:10",
             "outcome": "Storno",
             "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
           },
           {
-            "supporter": "MAUSMitarbeiter1",
+            "supporter": "MAUSMitarbeiter2",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Terminbestätigung",
+            "text": "BlaBlaBla"
+          },
+          {
+            "supporter": "MAUSMitarbeiter3",
             "timestamp": "10.10.10/10:10:10",
             "outcome": "Storno",
             "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
           }
         ]
-      }  
+      },
+      {
+        "information": {
+        "name": "Herr Klaus Kleber",
+        "tel": "0123456789",
+        "mail": "klaus@kleber.mail",
+        "state": "wartet",
+        "supporter": "",
+        "course": "AMT-23/24",
+        "course_date": "13.05.1994"
+        },
+        "interactions": [
+          {
+            "supporter": "MAUSMitarbeiter1",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Storno",
+            "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
+          },
+          {
+            "supporter": "MAUSMitarbeiter2",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Terminbestätigung",
+            "text": "BlaBlaBla"
+          },
+          {
+            "supporter": "MAUSMitarbeiter3",
+            "timestamp": "10.10.10/10:10:10",
+            "outcome": "Storno",
+            "text": "Kein Bedarf mehr an Erste-hilfe-Kurs teilzunehmen"
+          }
+        ]
+      }
+      
+      
     ]
+  }
 }

@@ -22,7 +22,7 @@ class WaitingPageTemplate extends React.Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            user: result.user,
+            items: result.items,
           })
         },
         (error) => {
@@ -35,7 +35,7 @@ class WaitingPageTemplate extends React.Component {
   }
 
   render() {
-    const { error, isLoaded, user } = this.state
+    const { error, isLoaded, items } = this.state
     if (error) {
       return <div>Error: {error.message}</div>
     } else if (!isLoaded) {
@@ -44,7 +44,7 @@ class WaitingPageTemplate extends React.Component {
       return (
         <div>
           <Overview />
-          <UserAccordion user={user} />
+          <UserAccordion items={items}/>
         </div>
       )
     }
