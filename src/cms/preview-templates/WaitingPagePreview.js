@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { WaitingPageTemplate } from "../../templates/waiting-page";
 
 const WaitingPagePreview = ({ entry, widgetFor }) => <></>;
 

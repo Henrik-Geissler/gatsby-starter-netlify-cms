@@ -1,11 +1,12 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
+import Overview from "./Overview";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 
-const TemplateWrapper = ({ children }) => {
+const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -49,8 +50,9 @@ const TemplateWrapper = ({ children }) => {
       </Helmet>
       <Navbar />
       <div>{children}</div>
+      <Overview />
     </div>
   );
 };
 
-export default TemplateWrapper;
+export default Layout;

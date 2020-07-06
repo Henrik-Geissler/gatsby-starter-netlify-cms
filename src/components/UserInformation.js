@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-import Alert from 'react-bootstrap/Alert'
-import Button from 'react-bootstrap/Button'
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Popover from 'react-bootstrap/Popover'
-import { FaPhone } from 'react-icons/fa'
-import Modal from 'react-bootstrap/Modal'
-import Collapse from 'react-bootstrap/Collapse'
-import UserInteraction from './UserInteraction'
+import React, { useState } from "react";
+import Hover from "./Hover";
+import Alert from "react-bootstrap/Alert";
+import Button from "react-bootstrap/Button";
+import { FaPhone } from "react-icons/fa";
+import Modal from "react-bootstrap/Modal";
+import Collapse from "react-bootstrap/Collapse";
+import UserInteraction from "./UserInteraction";
+import Popover from "react-bootstrap/Popover";
 function Example({ interactions }) {
-  const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Button className="float-right" variant="secondary" onClick={handleShow}>
@@ -52,88 +51,45 @@ function Example({ interactions }) {
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
-function UserInformation ({ information, interactions, supporter }) {
+function UserInformation({ information, interactions, supporter }) {
   const [open, setOpen] = useState(false);
   return (
     <>
-  <Alert variant="secondary">
-  <OverlayTrigger
-      key="top"
-      placement="top"
-      overlay={
-        <Popover>
-          <Popover.Title as="h3">jajaja</Popover.Title>
-          <Popover.Content>
-            Telefon: <strong>test</strong>
-          </Popover.Content>
-        </Popover>
-      }
-    >
-      <Button variant="primary"
-        onClick={() => setOpen(true)}
-        aria-controls="collapseThis"
-        aria-expanded={open}
+      <Alert variant="secondary">
+        <Hover title="PopUpTitle" description="PopUpDescription">
+          <Button
+            variant="primary"
+            onClick={() => setOpen(true)}
+            aria-controls="collapseThis"
+            aria-expanded={open}
+          >
+            Mir zuweisen
+          </Button>
+        </Hover>
+        <Hover
+          title={information.name}
+          description={"Telefon: <strong>" + information.tel + "</strong>"}
         >
-      Mir zuweisen
-      </Button>
-    </OverlayTrigger>
-            <OverlayTrigger
-              key="top"
-              placement="top"
-              overlay={
-                <Popover>
-                  <Popover.Title as="h3">{information.name}</Popover.Title>
-                  <Popover.Content>
-                    Telefon: <strong>{information.tel}</strong>
-                  </Popover.Content>
-                </Popover>
-              }
-            >
-              <Button variant="secondary">
-                <FaPhone />
-              </Button>
-            </OverlayTrigger>
-            {information.mail}
-            {information.course}
+          <Button variant="secondary">
+            <FaPhone />
+          </Button>
+        </Hover>
+        {information.mail}
+        {information.course}
+        <strong>{interactions.length}</strong> Interaktionen{" "}
+        <Example interactions={interactions} />
+      </Alert>
 
-      <strong>{interactions.length}</strong> Interaktionen{' '}
-      <Example interactions={interactions} />
-            </Alert>
-      <Collapse in={open||information.supporter===supporter}>
-        <div  id="collapseThis">
-            <UserInteraction interactions={interactions}/>
+      <Collapse in={open || information.supporter === supporter}>
+        <div id="collapseThis">
+          <UserInteraction interactions={interactions} />
         </div>
       </Collapse>
-      </>
-  )
-            }
-
-UserInformation.propTypes = {
-  supporter:PropTypes.string,
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      information: PropTypes.shape({
-        name: PropTypes.string,
-        tel: PropTypes.string,
-        mail: PropTypes.string,
-        course_date: PropTypes.string,
-        course: PropTypes.string,
-        state: PropTypes.string,
-        supporter: PropTypes.string,
-      }),
-      interactions: PropTypes.arrayOf(
-        PropTypes.shape({
-          supporter: PropTypes.string,
-          timestamp: PropTypes.string,
-          outcome: PropTypes.string,
-          text: PropTypes.string,
-        })
-      ),
-    })
-  ),
+    </>
+  );
 }
 
-export default UserInformation
+export default UserInformation;
