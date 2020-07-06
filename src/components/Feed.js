@@ -4,6 +4,7 @@ import Card from "react-bootstrap/Card";
 import ResourceContext from "./ResourceContext";
 import FeedHeader from "./FeedHeader";
 import FeedBody from "./FeedBody";
+import CardContext from "./CardContext";
 
 const Feed = () => {
   return (
@@ -13,12 +14,14 @@ const Feed = () => {
           <>
             {data.user.map((user, index) => (
               <Card>
-                <FeedHeader user={user} index={index} />
-                <FeedBody
-                  user={user}
-                  index={index}
-                  supporter={data.supporter}
-                />
+                <CardContext.Provider value={user}>
+                  <FeedHeader user={user} index={index} />
+                  <FeedBody
+                    user={user}
+                    index={index}
+                    supporter={data.supporter}
+                  />
+                </CardContext.Provider>
               </Card>
             ))}
           </>
