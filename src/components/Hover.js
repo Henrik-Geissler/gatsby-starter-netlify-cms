@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
 import OverlayTrigger, {
   OverlayTriggerType,
-} from "react-bootstrap/OverlayTrigger";
-import Popover from "react-bootstrap/Popover";
+} from 'react-bootstrap/OverlayTrigger'
+import Popover from 'react-bootstrap/Popover'
 function Hover(props) {
   return (
     <OverlayTrigger
@@ -16,7 +16,7 @@ function Hover(props) {
     >
       {props.children}
     </OverlayTrigger>
-  );
+  )
 }
 
-export default Hover;
+export default Hover

@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import Hover from "./Hover";
-import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
-import { FaPhone } from "react-icons/fa";
-import Collapse from "react-bootstrap/Collapse";
-import ActionBarContainer from "./ActionBarContainer";
-import Action from "./Action";
+import React, { useState } from 'react'
+import Hover from './Hover'
+import Alert from 'react-bootstrap/Alert'
+import Button from 'react-bootstrap/Button'
+import { FaPhone } from 'react-icons/fa'
+import Collapse from 'react-bootstrap/Collapse'
+import ActionBarContainer from './ActionBarContainer'
+import Action from './Action'
 
 function UserInformation({ information, interactions, supporter }) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false)
   return (
     <>
       <Alert variant="secondary">
         <Hover
           title={information.name}
-          description={"Telefon: <strong>" + information.tel + "</strong>"}
+          description={'Telefon: <strong>' + information.tel + '</strong>'}
         >
           <Button variant="secondary">
             <FaPhone />
@@ -41,7 +41,7 @@ function UserInformation({ information, interactions, supporter }) {
       </Alert>
       <ActionBarContainer information={information} supporter={supporter} />
     </>
-  );
+  )
 }
 
-export default UserInformation;
+export default UserInformation

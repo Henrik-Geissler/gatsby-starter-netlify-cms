@@ -1,6 +1,6 @@
-import React from "react";
-import Form from "react-bootstrap/Form";
-import Action from "./Action";
+import React from 'react'
+import Form from 'react-bootstrap/Form'
+import Action from './Action'
 
 function ActionForm(props) {
   return (
@@ -15,7 +15,7 @@ function ActionForm(props) {
         </Form>
       </Action>
     </>
-  );
+  )
 }
 
-export default ActionForm;
+export default ActionForm

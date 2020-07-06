@@ -1,10 +1,10 @@
-import React from "react";
-import Accordion from "react-bootstrap/Accordion";
-import Card from "react-bootstrap/Card";
-import ResourceContext from "./ResourceContext";
-import FeedHeader from "./FeedHeader";
-import FeedBody from "./FeedBody";
-import CardContext from "./CardContext";
+import React from 'react'
+import Accordion from 'react-bootstrap/Accordion'
+import Card from 'react-bootstrap/Card'
+import ResourceContext from './ResourceContext'
+import FeedHeader from './FeedHeader'
+import FeedBody from './FeedBody'
+import CardContext from './CardContext'
 
 const Feed = () => {
   return (
@@ -28,7 +28,7 @@ const Feed = () => {
         )}
       </ResourceContext.Consumer>
     </Accordion>
-  );
-};
+  )
+}
 
-export default Feed;
+export default Feed

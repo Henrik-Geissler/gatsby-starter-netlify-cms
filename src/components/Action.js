@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Alert from "react-bootstrap/Alert";
-import Hover from "./Hover";
-import CardContext from "./CardContext";
+import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
+import Modal from 'react-bootstrap/Modal'
+import Alert from 'react-bootstrap/Alert'
+import Hover from './Hover'
+import CardContext from './CardContext'
 
 function Action(props) {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const handleCall = () => setShow(false);
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
+  const handleCall = () => setShow(false)
   return (
     <>
       <Hover title={props.title} description={props.description}>
@@ -27,7 +27,7 @@ function Action(props) {
         <Modal.Header closeButton>
           <Modal.Title>
             <Alert variant={props.variant}>{props.title}</Alert>
-            {"  -  "}
+            {'  -  '}
             <CardContext.Consumer>
               {(user) => <>{user.information.name}</>}
             </CardContext.Consumer>
@@ -44,7 +44,7 @@ function Action(props) {
         </Modal.Footer>
       </Modal>
     </>
-  );
+  )
 }
 
-export default Action;
+export default Action

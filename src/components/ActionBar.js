@@ -1,5 +1,5 @@
-import React from "react";
-import ActionForm from "./ActionForm";
+import React from 'react'
+import ActionForm from './ActionForm'
 const ActionBar = ({ interactions, buttonsActive }) => (
   <>
     <ActionForm
@@ -30,6 +30,6 @@ const ActionBar = ({ interactions, buttonsActive }) => (
       <p>long description</p>
     </ActionForm>
   </>
-);
+)
 
-export default ActionBar;
+export default ActionBar
