@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ResourceContext from "./ResourceContext";
-class Resource extends Component {
+class ResourceContainer extends Component {
   state = {
     loading: true,
     error: null,
@@ -41,4 +41,4 @@ class Resource extends Component {
     }
   }
 }
-export default Resource;
+export default ResourceContainer;

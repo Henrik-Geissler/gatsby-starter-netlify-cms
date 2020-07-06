@@ -4,19 +4,19 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
 
-import UserAccordion from "../components/UserAccordion";
+import Feed from "../components/Feed";
 import Overview from "../components/Overview";
-import Resource from "../components/Resource";
+import ResourceContainer from "../components/ResourceContainer";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 class WaitingPageTemplate extends React.Component {
   render() {
     return (
       <>
-        <Resource
+        <ResourceContainer
           path="/api/example.json"
           render={(data) => {
-            return <UserAccordion />;
+            return <Feed />;
           }}
         />
         <Overview />
