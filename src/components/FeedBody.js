@@ -11,6 +11,7 @@ const FeedBody = ({ user, index, supporter }) => {
           interactions={user.interactions}
           supporter={supporter}
         />
+        <hr />
       </Card.Body>
     </Accordion.Collapse>
   )

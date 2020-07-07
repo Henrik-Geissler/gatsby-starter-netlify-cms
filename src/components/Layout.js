@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Navbar from './Navbar'
+import Nav from './Nav'
 import Overview from './Overview'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <Nav />
       <div>{children}</div>
       <Overview />
     </div>
