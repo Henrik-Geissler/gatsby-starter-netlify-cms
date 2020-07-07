@@ -1,8 +1,8 @@
 ---
-templateKey: "WaitingPage"
+templateKey: 'Auth'
 path: /
 image: /img/home-jumbotron.jpg
-title: Warteliste
+title: Auth
 ---
 
 ### Shade-grown coffee
