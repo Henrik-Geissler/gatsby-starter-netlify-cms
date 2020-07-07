@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import Hover from './Hover'
 import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button'
+import Badge from 'react-bootstrap/Badge'
 import { FaPhone } from 'react-icons/fa'
-import Collapse from 'react-bootstrap/Collapse'
 import ActionBarContainer from './ActionBarContainer'
 import Action from './Action'
 
@@ -22,6 +22,7 @@ function UserInformation({ information, interactions, supporter }) {
         </Hover>
         {information.mail}
         {information.course}
+        <Badge variant="info">{information.supporter}</Badge>
         <strong>{interactions.length}</strong> Interaktionen
         <Action variant="info" title="Protokoll" description="soso">
           {interactions.map((interactions) => (

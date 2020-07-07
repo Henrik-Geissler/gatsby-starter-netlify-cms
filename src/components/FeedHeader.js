@@ -6,10 +6,9 @@ import Badge from 'react-bootstrap/Badge'
 const FeedHeader = ({ user, index }) => {
   return (
     <Accordion.Toggle as={Card.Header} eventKey={index}>
-      {user.information.name}{' '}
       <Badge variant="secondary">{user.information.state}</Badge>
-      {user.information.course_date}{' '}
-      <Badge variant="info">{user.information.supporter}</Badge>
+      {user.information.name} {user.information.course_date}
+      kontaktiert vor 2 Tagen
     </Accordion.Toggle>
   )
 }

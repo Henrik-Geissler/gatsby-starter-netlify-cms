@@ -10,7 +10,7 @@ function ActionForm(props) {
         <Form>
           <Form.Group controlId="exampleForm.ControlTextarea1">
             <Form.Label>Bemerkung</Form.Label>
-            <Form.Control as="textarea" rows="3" />
+            <Form.Control placeholder="optional" as="textarea" rows="3" />
           </Form.Group>
         </Form>
       </Action>
