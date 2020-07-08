@@ -15,18 +15,31 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:eslint-plugin-import/recommended",
+    "plugin:eslint-plugin-promise/recommended"
   ],
-  "plugins": ["react-hooks", "react"],
+  "plugins": [
+    "react-hooks",
+    "react",
+    "eslint-plugin-import",
+    "eslint-plugin-promise"
+  ],
   "rules": {
+    "max-lines": "error",
+    "max-statements": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
+
+    //TODO: integrate
     "react/no-unescaped-entities": "warn",
     "react/prop-types": "warn",
     "no-undef": "warn",
     "react/display-name": "warn",
     "no-unused-vars": "warn",
     "react/jsx-key": "warn",
+
+    //Fixing
     "curly": "error",
     "dot-location": "error",
     "dot-notation": "error",
@@ -34,12 +47,13 @@
     "no-div-regex": "error",
     "no-implicit-coercion": "error",
     "no-unneeded-ternary": "error",
-    "operator-assignment": "error"
+    "operator-assignment": "error",
+    "spaced-comment": "error"
   },
   "settings": {
     "react": {
       "createClass": "createReactClass",
-      "version": "detect" // React version. "detect" automatically picks the version you have installed.
+      "version": "detect"
     }
   }
 }
