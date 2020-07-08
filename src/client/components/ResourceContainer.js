@@ -8,9 +8,9 @@ class ResourceContainer extends Component {
   }
 
   componentDidMount() {
-    fetch(this.props.path).
-      then(res => res.json()).
-      then(
+    fetch(this.props.path)
+      .then(res => res.json())
+      .then(
         result => {
           this.setState({
             loading: false,
