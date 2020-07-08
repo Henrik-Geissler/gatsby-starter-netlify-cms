@@ -9,8 +9,7 @@ import ExternalApi from '../../../pages/ExternalApi'
 import history from '../../../utils/history'
 import Overview from '../../Overview'
 
-import './node_modules/bootstrap/dist/css/bootstrap.min.css'
-
+import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 const AppRoutes = () => {
   return (
     <Router history={history}>
