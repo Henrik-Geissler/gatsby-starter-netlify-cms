@@ -29,7 +29,7 @@
     "camelcase": "error",
     "max-depth": ["warn", 4],
     "max-len": ["warn", 120],
-    "max-lines": ["error", 120],
+    "max-lines": ["warn", 120],
     "max-statements": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
