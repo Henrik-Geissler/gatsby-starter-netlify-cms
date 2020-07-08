@@ -92,7 +92,7 @@ export const ExternalApiComponent = () => {
             You need to{' '}
             <a
               href='#/'
-              class='alert-link'
+              className='alert-link'
               onClick={e => handle(e, handleConsent)}>
               consent to get access to users api
             </a>
@@ -104,7 +104,7 @@ export const ExternalApiComponent = () => {
             You need to{' '}
             <a
               href='#/'
-              class='alert-link'
+              className='alert-link'
               onClick={e => handle(e, handleLoginAgain)}>
               log in again
             </a>

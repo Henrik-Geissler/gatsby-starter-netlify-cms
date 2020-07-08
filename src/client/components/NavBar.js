@@ -126,7 +126,7 @@ const NavBar = () => {
                       className='nav-user-profile d-inline-block rounded-circle mr-3'
                       width='50'
                     />
-                    <h6 className='d-inline-block'>{user.name}</h6>
+                    <h6 className='d-inline-block'>{user.name} </h6>
                   </span>
                 </NavItem>
                 <NavItem>

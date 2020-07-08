@@ -25,14 +25,14 @@ function UserInformation({ information, interactions, supporter }) {
         <strong>{interactions.length}</strong> Interaktionen
         <Action variant='info' title='Protokoll' description='soso'>
           {interactions.map(interactions => (
-            <dl class='row mb-0'>
-              <dt class='col-sm-3'>
+            <dl className='row mb-0'>
+              <dt className='col-sm-3'>
                 {interactions.timestamp} : {interactions.outcome}
               </dt>
-              <dd class='col-sm-9'>
-                <dl class='row mb-0'>
-                  <dt class='col-sm-4'>{interactions.supporter}</dt>
-                  <dd class='col-sm-8'>{interactions.text}</dd>
+              <dd className='col-sm-9'>
+                <dl className='row mb-0'>
+                  <dt className='col-sm-4'>{interactions.supporter}</dt>
+                  <dd className='col-sm-8'>{interactions.text}</dd>
                 </dl>
               </dd>
             </dl>

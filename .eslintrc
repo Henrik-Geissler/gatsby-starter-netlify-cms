@@ -12,6 +12,34 @@
     "amd": true,
     "node": true
   },
-  "extends": "eslint:recommended",
-  "rules": {}
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "plugins": ["react-hooks", "react"],
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-unescaped-entities": "warn",
+    "react/prop-types": "warn",
+    "no-undef": "warn",
+    "react/display-name": "warn",
+    "no-unused-vars": "warn",
+    "react/jsx-key": "warn",
+    "curly": "error",
+    "dot-location": "error",
+    "dot-notation": "error",
+    "eqeqeq": "error",
+    "no-div-regex": "error",
+    "no-implicit-coercion": "error",
+    "no-unneeded-ternary": "error",
+    "operator-assignment": "error"
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "version": "detect" // React version. "detect" automatically picks the version you have installed.
+    }
+  }
 }
