@@ -38,6 +38,10 @@
     "react/display-name": "warn",
     "no-unused-vars": "warn",
     "react/jsx-key": "warn",
+    "import/no-unresolved": "warn",
+    "promise/always-return": "warn",
+    "promise/catch-or-return": "warn",
+    "promise/no-return-wrap": "warn",
 
     //Fixing
     "curly": "error",
