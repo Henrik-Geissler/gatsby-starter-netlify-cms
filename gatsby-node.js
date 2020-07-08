@@ -36,7 +36,9 @@ exports.createPages = ({ actions, graphql }) => {
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
         component: path.resolve(
-          `src/components/Auth/${String(edge.node.frontmatter.templateKey)}.js`
+          `src/components/App/Auth/${String(
+            edge.node.frontmatter.templateKey
+          )}.js`
         ),
         // additional data can be passed via context
         context: {

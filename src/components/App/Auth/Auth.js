@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import AppRoutes from '../AppRoutes/AppRoutes'
 import { Auth0Provider } from '@auth0/auth0-react'
-import config from '../../../config/auth_config.json'
-import history from '../../utils/history'
+import config from '../../../../config/auth_config.json'
+import history from '../../../utils/history'
 
 const onRedirectCallback = (appState) => {
   history.push(

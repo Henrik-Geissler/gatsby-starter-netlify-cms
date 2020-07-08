@@ -1,9 +1,8 @@
 import React from 'react'
 
 import Loading from '../Loading'
-import Style from '../Style'
-import AppRoutes from '../AppRoutes/AppRoutes'
-import Meta from '../Meta'
+import AppRoutes from './AppRoutes/AppRoutes'
+import Meta from './Meta/Meta'
 import { useAuth0 } from '@auth0/auth0-react'
 
 import initFontAwesome from '../../utils/initFontAwesome'
