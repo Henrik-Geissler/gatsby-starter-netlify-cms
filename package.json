@@ -7,7 +7,8 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm-run-all --parallel develop api-server",
-    "build": "npm run clean && gatsby build",
+    "build": "npm-run-all --parallel buildG api-server",
+    "buildG": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "push-format": "yarn format && (git commit -a -m \"ci(format): prettier\"|| true)",
