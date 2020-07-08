@@ -26,7 +26,10 @@
     "eslint-plugin-promise"
   ],
   "rules": {
-    "max-lines": "error",
+    "camelcase": "error",
+    "max-depth": ["warn", 4],
+    "max-len": ["warn", 120],
+    "max-lines": ["error", 120],
     "max-statements": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
@@ -52,7 +55,23 @@
     "no-implicit-coercion": "error",
     "no-unneeded-ternary": "error",
     "operator-assignment": "error",
-    "spaced-comment": "error"
+    "spaced-comment": "error",
+    "multiline-comment-style": "error",
+    "no-useless-return": "error",
+    "new-parens": ["error", "never"],
+    "operator-linebreak": ["error", "before"],
+    "prefer-exponentiation-operator": "error",
+    "prefer-object-spread": "error",
+    "sort-vars": "error",
+    "no-var": "error",
+    "no-useless-rename": "error",
+    "no-useless-computed-key": "error",
+    "object-shorthand": "error",
+    "prefer-const": "error",
+    "prefer-destructuring": "error",
+    "prefer-template": "error",
+    "rest-spread-spacing": "error",
+    "sort-imports": "error"
   },
   "settings": {
     "react": {
