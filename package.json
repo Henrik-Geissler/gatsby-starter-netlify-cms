@@ -5,7 +5,7 @@
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm-run-all --parallel develop api-server",
-    "build": "npm-run-all --parallel buildG api-server",
+    "build": "npm-run-all --parallel develop api-server",
     "buildG": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier . --write",
