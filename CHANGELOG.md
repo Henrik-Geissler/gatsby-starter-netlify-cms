@@ -1,6 +1,9 @@
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [1.3.0-alpha.20](https://github.com/Henrik-Geissler/gatsby-starter-netlify-cms/compare/v1.3.0-alpha.18...v1.3.0-alpha.20) (2020-07-10)
+
 ## [1.3.0-alpha.17](https://github.com/Henrik-Geissler/gatsby-starter-netlify-cms/compare/v1.3.0-alpha.16...v1.3.0-alpha.17) (2020-07-08)
 
 ## [1.3.0-alpha.16](https://github.com/Henrik-Geissler/gatsby-starter-netlify-cms/compare/v1.3.0-alpha.15...v1.3.0-alpha.16) (2020-07-08)
