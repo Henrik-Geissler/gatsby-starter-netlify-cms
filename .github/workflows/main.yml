@@ -39,7 +39,7 @@ jobs:
 
       - name: Prettier
         run: yarn format
-        
+
       - name: Commit Linter
         run: |
           git config --local user.email "action@github.com"
@@ -67,7 +67,7 @@ jobs:
           
       - name: Push to master
         run: |
-          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master --force
 
       #- name: Deploy to github pages
         #uses: peaceiris/actions-gh-pages@v3
