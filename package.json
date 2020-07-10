@@ -1,6 +1,5 @@
 {
   "name": "gatsby-starter-netlify-cms",
-  "version": "1.3.0-alpha.22",
   "private": true,
   "license": "MIT",
   "main": "n/a",
@@ -107,5 +106,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "version": "0.0.1-alpha.0"
 }
