@@ -34,6 +34,15 @@ jobs:
       - name: Install Packages
         run: yarn install 
 
+      - name: Standard Version
+        run: |
+          git config --local user.name "CI: Release"
+          yarn version
+
+      - name: Push dev
+        run: |
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:dev --force
+
       - name: ESLint
         run: yarn lint
 
@@ -59,13 +68,8 @@ jobs:
       #- name: Add codecov report
         #run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
 
-      - name: Standard Version
-        run: |
-          git config --local user.name "CI: Release"
-          yarn version
-
           
-      - name: Push to master
+      - name: Push master
         run: |
           git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master --force
 
