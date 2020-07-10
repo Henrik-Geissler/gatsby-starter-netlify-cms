@@ -2,7 +2,6 @@
   "name": "gatsby-starter-netlify-cms",
   "private": true,
   "license": "MIT",
-  "main": "n/a",
   "scripts": {
     "clean": "gatsby clean",
     "start": "npm-run-all --parallel develop api-server",
