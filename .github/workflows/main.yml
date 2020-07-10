@@ -5,7 +5,7 @@ on:
     branches: [dev]
 
 jobs:
-  build:
+  deploy:
     runs-on: macos-latest
     strategy:
       matrix:
@@ -47,17 +47,17 @@ jobs:
           git add --all
           git diff-index --quiet HEAD || git commit -m "ci(lint):  ${{github.event.commits[0].message}}"
 
-      - name: Run Jest UNIT Tests
-        run: yarn test
+      #- name: Run Jest UNIT Tests
+        #run: yarn test
 
-      - name: Upload test coverage as artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: coverage
-          path: coverage
+      #- name: Upload test coverage as artifact
+        #uses: actions/upload-artifact@v1
+        #with:
+          #name: coverage
+          #path: coverage
 
-      - name: Add codecov report
-        run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
+      #- name: Add codecov report
+        #run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
 
       - name: Prerelease 
         run: |
