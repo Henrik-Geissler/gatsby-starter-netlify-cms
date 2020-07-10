@@ -22,37 +22,39 @@ You can use this repository as a starting point for your Cross Platform Mobile A
 
 ## Installation
 
-```bash 
+```bash
 git clone https://github.com/Henrik-Geissler/WebApp.git
 cd WebApp
 yarn install
 ```
-
 
 ## Usage
 
 ### - local
 
 ##### 1. `yarn lint`
+
 Runs linter: [ESLint](https://eslint.org/), [GherkinLint](https://github.com/vsiakka/gherkin-lint/) and [Prettier](https://www.prettier.io/)
 with well chosen rulesets.
 
-
 ##### 2. `yarn start`
+
 Creates a development build and serves it on localhost.
 
 ##### 3. `yarn test`
+
 Runs tests: UNIT Tests with [Jest](https://jestjs.io/) and E2E Tests with [Cucumber](https://cucumber.io/) & [Puppeteer](https://pptr.dev/). Comes with [Code Coverage Reports](https://codecov.io/gh/Henrik-Geissler/WebApp) and a [Pattern Library](https://github.com/Henrik-Geissler/WebApp/tree/master/pattern/feature) to copy-paste from.
 
-
 ##### 4. `yarn prerelease`
+
 Creates a [CHANGELOG.md](https://github.com/Henrik-Geissler/WebApp/blob/master/CHANGELOG.md) with [Standard Version](https://www.conventionalcommits.org/) and a `stable` branch.
 
-
 ##### 5. `yarn deploy`
+
 Deploys the App to GitHub Pages. See the [App in Action](https://henrik-geissler.github.io/WebApp)!
 
 ### - remote
 
 ##### 1: `git push origin master`
+
 Workflows run all the above automated on the remote end with [Github Actions](https://github.com/Henrik-Geissler/WebApp/actions) after every `git push`.
