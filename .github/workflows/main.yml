@@ -39,11 +39,7 @@ jobs:
 
       - name: Prettier
         run: yarn format
-
-      - name: Standard Version
-        run: |
-          git config --local user.name "CI: Release"
-          yarn version
+        
       - name: Commit Linter
         run: |
           git config --local user.email "action@github.com"
@@ -63,10 +59,15 @@ jobs:
       #- name: Add codecov report
         #run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
 
+      - name: Standard Version
+        run: |
+          git config --local user.name "CI: Release"
+          yarn version
+
           
       - name: Push to master
         run: |
-          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master --follow-tags
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master
 
       #- name: Deploy to github pages
         #uses: peaceiris/actions-gh-pages@v3
