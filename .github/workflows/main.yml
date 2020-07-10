@@ -1,0 +1,82 @@
+name: CI
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Log versions
+        run: |
+          node -v
+          yarn --version
+          git --version
+
+      - name: Log GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "${GITHUB_CONTEXT}"
+
+      - name: Install Packages
+        run: yarn install 
+
+      - name: Linting and Formatting
+        run: yarn lint
+
+      - name: Commit Lint Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "CI: Linter"
+          git add --all
+          git diff-index --quiet HEAD || git commit -m "ci(lint):  ${{github.event.commits[0].message}}"
+
+      - name: Run Jest UNIT Tests
+        run: yarn test-ci:unit
+
+      - name: Upload test coverage as artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: coverage
+          path: coverage
+
+      - name: Add codecov report
+        run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
+
+      - name: Build App
+        run: yarn build
+
+      - name: Setup Files for Commit
+        run: |
+          sed -i '' 's/headless: true/headless: false/g' features/support/scope/BrowserScope.js
+
+      - name: Prerelease 
+        run: |
+          git config --local user.name "CI: Release"
+          yarn prerelease-ci
+          
+      - name: Push master
+        run: |
+          git push "https://${{github.actor}}:${{secrets.GITHUB_TOKEN}}@github.com/${{github.repository}}.git" HEAD:master --follow-tags
+
+      - name: Deploy to github pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+
+      - name: Updating Domain
+        run: echo "Update domain"
