@@ -34,10 +34,13 @@ jobs:
       - name: Install Packages
         run: yarn install 
 
-      - name: Linting and Formatting
+      - name: ESLint
         run: yarn lint
 
-      - name: Commit Lint Changes
+      - name: Prettier
+        run: yarn format
+
+      - name: Commit Linter Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "CI: Linter"
@@ -45,7 +48,7 @@ jobs:
           git diff-index --quiet HEAD || git commit -m "ci(lint):  ${{github.event.commits[0].message}}"
 
       - name: Run Jest UNIT Tests
-        run: yarn test-ci:unit
+        run: yarn test
 
       - name: Upload test coverage as artifact
         uses: actions/upload-artifact@v1
@@ -56,17 +59,10 @@ jobs:
       - name: Add codecov report
         run: ./node_modules/.bin/codecov -t ${{secrets.CODECOV_TOKEN}}
 
-      - name: Build App
-        run: yarn build
-
-      - name: Setup Files for Commit
-        run: |
-          sed -i '' 's/headless: true/headless: false/g' features/support/scope/BrowserScope.js
-
       - name: Prerelease 
         run: |
           git config --local user.name "CI: Release"
-          yarn prerelease-ci
+          yarn version
           
       - name: Push master
         run: |
